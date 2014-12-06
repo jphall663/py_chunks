@@ -15,6 +15,9 @@ WORKING_DIR: Parent directory in which the sub-directories for each
              
 INPUT_DATA: File to split into chunks and process. 
         
+Run by setting constants here OR by command line:
+run_on_chunks.py -f <input file> -p <number of processes> -d <output directory>
+            
 """
 
 import getopt
@@ -143,7 +146,7 @@ def task_2(i, in_prefix='_raw_task_1_completed'):
 
 def task_3(i, in_prefix='_raw_task_1_completed_task_2_completed'):
 
-    """ Just one more sample task that executes on each chunk ndependently.
+    """ Just one more sample task that executes on each chunk independently.
 
     Args:
         i: Thread index.
@@ -198,7 +201,7 @@ def main(argv):
             elif opt == '-p':
                 n_thread = arg
             elif opt == '-h':
-                print 'Preprocess.py -f <input file> -p <number of processes> -d <output directory>'
+                print 'run_on_chunks.py -f <input file> -p <number of processes> -d <output directory>'
                 sys.exit(0)
     except getopt.GetoptError:
         print 'run_on_chunks.py -f <input file> -p <number of processes> -d <output directory>'
