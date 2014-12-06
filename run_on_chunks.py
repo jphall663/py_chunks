@@ -35,7 +35,11 @@ INPUT_DATA = 'sample_data.txt'
 
 def create_out_dirs():
 
-    """ Creates N_THREAD number of output directories. """
+    """ Creates N_THREAD number of output directories. 
+    
+    Raises:
+        EnvironemtError: Problem creating directories. 
+    """
 
     print '-------------------------------------------------------------------'
     print 'Creating working directory structure ... '
@@ -56,7 +60,7 @@ def create_out_dirs():
 
 def chunk_files():
 
-    """ Separates input file into N_THREAD roughly equal chunks.
+    """ Separates INPUT_DATA into N_THREAD roughly equal chunks.
 
     Each in a separate directory (created in create_out_dirs) for thread
     safety.
@@ -178,7 +182,8 @@ def main(argv):
         argv: Command line args.
 
     Raises:
-        GetoptError: Error parsing command line options.
+        GetoptError: Problem parsing command line options.
+        BaseException: Some problem from a task.
     """
 
     # Init vars 
@@ -223,7 +228,7 @@ def main(argv):
 
     big_tic = time.time()
 
-    # Init chunk directory structure
+    # Init chunk directory structure and chunks
     create_out_dirs()
     chunk_files()
 
