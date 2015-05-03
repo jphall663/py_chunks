@@ -42,7 +42,7 @@ from multiprocessing import Process
 
 # TODO: Set constants
 N_THREAD = 4
-WORKING_DIR = 'C:\Temp'
+WORKING_DIR = '/tmp'
 INPUT_DATA = 'sample_data.txt'
 
 def create_out_dirs():
