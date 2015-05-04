@@ -40,7 +40,7 @@ import sys
 import time
 from multiprocessing import Process
 
-# TODO: Set constants
+# TODO: User set constants
 N_THREAD = 4
 WORKING_DIR = '/tmp'
 INPUT_DATA = 'sample_data.txt'
